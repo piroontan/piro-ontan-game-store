@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>piro ontan game</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { font-size: 16px; }
+    body {
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("pn (20).png") no-repeat center/cover fixed;
+      font-family: 'Nosifer', cursive;
+      color: #fff;
+      overflow-x: hidden;
+      animation: flicker 3s infinite;
+      line-height: 1.6;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.9; }
+      60% { opacity: 0.95; }
+    }
+    :root {
+      --card-width: 180px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    nav {
+      width: 100%;
+      background: rgba(20, 0, 0, 0.8);
+      padding: 1rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo {
+      font-family: 'Creepster', cursive;
+      font-size: 1.5rem;
+      color: #e60000;
+      flex: 1 0 auto;
+      text-align: center;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      flex: 2 0 auto;
+      justify-content: center;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 1rem;
+    }
+    nav ul li a:hover { color: #e60000; }
+    .social-icons {
+      display: flex;
+      gap: 1rem;
+      font-size: 1.25rem;
+      flex: 1 0 auto;
+      justify-content: center;
+    }
+    .social-icons a { transition: color 0.3s; }
+    .social-icons a:hover { color: #e60000; }
+    header {
+      text-align: center;
+      padding: 0rem 1rem;
+      position: relative;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #e60000;
+      text-shadow: 0 0 10px #e60000;
+      z-index: 1;
+    }
+    section {
+      background: rgba(20, 0, 0, 0.8);
+      padding: 3rem 0;
+    }
+    .games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+    }
+    .game-card {
+      background: rgba(30, 0, 0, 0.8);
+      border: 1px solid #e60000;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    .game-card:hover { transform: scale(1.03); }
+    .game-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      background: rgba(0,0,0,0.5);
+    }
+    .game-card .info {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .game-card .info h2 {
+      font-family: 'Creepster', cursive;
+      color: #e60000;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .game-card .info p {
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+    .download-buttons {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .download-buttons a {
+      background-color: #e60000;
+      border: none;
+      border-radius: 50%;
+      width: 2.2rem;
+      height: 2.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .download-buttons a:hover { background-color: #ff1a1a; }
+    .bubbles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(230, 0, 0, 0.2);
+      border-radius: 50%;
+      animation: rise linear infinite;
+    }
+    @keyframes rise {
+      to { transform: translateY(-120vh); opacity: 0; }
+    }
+    #audio-btn {
+      position: fixed;
+      bottom: 1rem; right: 1rem;
+      background: #e60000;
+      border: none;
+      border-radius: 50%;
+      width: 3rem; height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 2;
+    }
+    #audio-btn i { color: #fff; font-size: 1.25rem; }
+    footer {
+      background: rgba(20, 0, 0, 0.8);
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    footer p { margin: 0.5rem 0; font-size: 0.9rem; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      nav ul, .social-icons {
+        flex: 1 0 100%;
+        margin-top: 0.5rem;
+        justify-content: center;
+      }
+      nav { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- Background Bubbles -->
+ <div class="bubbles"></div>
+ <!-- Navigation -->
+ <nav class="container">
+   <div class="logo">piro ontan game</div>
+   <ul>
+     <li><a href="#">الرئيسية <i class="fas fa-home"></i></a></li>
+     <li><a href="#games">الألعاب <i class="fas fa-gamepad"></i></a></li>
+     <li><a href="#contact">تواصل معنا <i class="fas fa-envelope"></i></a></li>
+   </ul>
+   <div class="social-icons">
+     <a href="https://www.youtube.com/@PIRO_ONTAN" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+     <a href="https://www.facebook.com/groups/1048437976301513" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+   </div>
+ </nav>
+ <!-- Header -->
+ <header>
+   <h1>اهلا بك في عالمي</h1>
+ </header>
+ <!-- Games Section -->
+
+
+
+  <section class="games container" id="games">
+    <div class="game-card">
+      <img src="pn (11).png" alt="im crazy">
+      <div class="info">
+        <h2>im crazy</h2>
+        <p>فقط نطبيق مجنون للتخمين و لطبعة بستمرار وفعل شيء تئمره به انت تفهم قصدي ? ;)</p>
+        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
+        <div class="download-buttons">
+          <!-- <a href="#" title="Windows">💻</a> -->
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <a href="https://www.dropbox.com/scl/fi/iqqace25eyk4nmqj1sn08/im-craziy-apk-beta-a.apk?rlkey=lbkv76m0rl6q2p401h0rd0dbt&st=ljxdgfiq&dl=0" title="android">🤖</a>
+        </div>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="pn (5).png" alt="dors bad win">
+      <div class="info">
+        <h2>dors bad win</h2>
+        <p>محاكات مشابهة لفايروس xp  لكن هادا امن </p>
+        <p style="color: #2ee600;align-self: anchor-center;"> مكتمل</p>
+        <div class="download-buttons">
+          <a href="games/bad dors/dors bad windows pc.zip" title="Windows">💻</a>
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <a href="games/bad dors/dors bad windows .apk" title="android">🤖</a>
+        </div>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="pn (14).png" alt="arona ace السيل الجارف">
+      <div class="info">
+        <h2>arona ace</h2>
+        <p>مغامرة مشوقة بالأحداث في قلب الطبيعة الحارقة.</p>
+        <p style="color: #2ee600;align-self: anchor-center;"> مكتمل</p>
+        <div class="download-buttons">
+          <a href="https://www.dropbox.com/scl/fi/dyww85dyjvd6e30g6ve3b/arona-ace-ver-1.2.8-complet-99.zip?rlkey=jdncqj5fzlvh4a7ox8fq5xtk0&st=ayb8yck4&dl=0" title="Windows">💻</a>
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <!-- <a href="#" title="android">🤖</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="pn (19).png" alt="Back rooms tunisia">
+      <div class="info">
+        <h2>Back rooms tunisia</h2>
+        <p>استعد للعالم المجهول لشريكة ايسنك للغرف الخلفية حاول النجات</p>
+        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
+        <div class="download-buttons">          
+          <a href="games/Backrooms vers/backrooms old ver 2 - not complet --!/backrooms old ver 2 - not complet --!PC.zip" title="Windows" >💻</a>
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <!-- <a href="#" title="android">🤖</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="pn (18).png" alt="panap">
+      <div class="info">
+        <h2>panap</h2>
+        <p>استعد -- خوفاً في هذه اللعبة ذات الألغاز المخفية.</p>
+        <p style="color: #e60000;align-self: anchor-center;">غير مكتمل</p>
+        <div class="download-buttons">
+          <!-- <a href="#" title="Windows">💻</a> -->
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <!-- <a href="#" title="android">🤖</a> -->
+        </div>
+      </div>
+    </div>
+    <div class="game-card">
+      <img src="df (3).png" alt="D-max">
+      <div class="info">
+        <h2>D-max</h2>
+        <p> النسخة التجريبية من محاكات التهريب للوقود   و الهرولة في الصحراء الغربية</p>
+        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
+        <div class="download-buttons">          
+          <a href="https://www.dropbox.com/scl/fi/sq4fe43oo8kjmhcffu407/D-max-falaga-beta-not-complet-PC.zip?rlkey=v1txb3mxbvowkmym4v00dagfz&st=uwbo2vyr&dl=0" title="Windows">💻</a>
+          <a href="https://www.dropbox.com/scl/fi/nm0au8umlapo4af6kf2rn/d-max_contra_-src.zip?rlkey=hcnyy5niozmbsjyspu8ong0on&st=1v2kpajn&dl=0" title="Windows">‹⁄›</a>
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <!-- <a href="#" title="android">🤖</a> -->
+        </div>
+      </div>
+    </div>
+    
+    <div class="game-card">
+      <img src="18.png" alt="D-max">
+      <div class="info">
+        <h2>stop +18</h2>
+        <p> تطبيق محقز لمحاربة الادمان</p>
+        <p style="color: #e60000;align-self: anchor-center;">غير مكتمل</p>
+        <div class="download-buttons">          
+          <a href="https://www.dropbox.com/scl/fi/oanlzkfl7e6zg3ohjgase/stop-18-pc.zip?rlkey=qxm2pou9kuwlbui82g1f2gtmi&st=zrz5b8iz&dl=0" title="Windows">💻</a>
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <a href="https://www.dropbox.com/scl/fi/hy541wsqihdeeskgn06yf/stop-18.apk?rlkey=2ljvlchjx83za2j0c799hh6vz&st=fl9m74p2&dl=0" title="android">🤖</a>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="game-card">
+      <img src="df (6).png" alt="D-max">
+      <div class="info">
+        <h2>car roder</h2>
+        <p>فقط عالم مفتوح انت حر افعل ما تشاء في هاته الخريطة المعزولة عن العالم</p>
+        <p style="color: #e60000;align-self: anchor-center;">غير مكتمل</p>
+        <div class="download-buttons">          
+          <!-- <a href="games/stop 18+/stop 18+ pc.zip" title="Windows">💻</a> -->
+          <!-- <a href="#" title="macOS">🍎</a> -->
+          <!-- <a href="games/stop 18+/stop 18+.apk" title="android">🤖</a> -->
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
