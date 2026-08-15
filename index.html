@@ -1,340 +1,1815 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-  
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="piro ontan game store  arawa7 - piro_ontan tv " content="piro ontan game store arwa7">
-  <title>piro ontan game store - Arwa7</title>
-  <link rel="icon" href="icon.png">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { font-size: 16px; }
-    body {
-      background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("pn (20).png") no-repeat center/cover fixed;
-      font-family:  cursive;
-      color: #fff;
-      overflow-x: hidden;
-      animation: flicker 3s infinite;
-      line-height: 1.6;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="PIRO ONTAN GAME STORE - متجر ألعاب ومشاريع PIRO ONTAN">
+<meta name="author" content="PIRO ONTAN">
+<meta name="theme-color" content="#080808">
+
+<title>PIRO ONTAN GAME STORE</title>
+
+<link rel="icon" href="icon.png">
+
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --red:#e50914;
+    --red2:#ff2430;
+    --bg:#050505;
+    --card:rgba(18,18,18,.78);
+    --border:rgba(255,255,255,.09);
+    --muted:#aaa;
+    --green:#25e56a;
+    --yellow:#ffd21a;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Tahoma,sans-serif;
+    color:#fff;
+    background:#050505;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
+    background:
+        linear-gradient(
+            rgba(0,0,0,.82),
+            rgba(0,0,0,.94)
+        ),
+        url("pn (20).png")
+        center/cover fixed no-repeat;
+}
+
+body:after{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-4;
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(229,9,20,.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(229,9,20,.10),
+            transparent 30%
+        );
+}
+
+.container{
+    width:min(1180px,calc(100% - 30px));
+    margin:auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+
+    background:rgba(7,7,7,.82);
+
+    border-bottom:
+        1px solid
+        var(--border);
+
+    backdrop-filter:blur(16px);
+}
+
+.nav{
+    min-height:72px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.logo{
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    font-size:20px;
+
+    white-space:nowrap;
+}
+
+.logo span{
+    color:var(--red);
+}
+
+nav{
+    display:flex;
+
+    gap:8px;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:#ddd;
+
+    text-decoration:none;
+
+    padding:9px 13px;
+
+    border-radius:9px;
+
+    transition:.25s;
+
+    font-size:14px;
+}
+
+nav a:hover{
+    background:
+        rgba(229,9,20,.14);
+
+    color:#fff;
+}
+
+.social{
+    display:flex;
+
+    gap:8px;
+}
+
+.social a{
+    width:38px;
+    height:38px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:10px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    background:
+        rgba(255,255,255,.04);
+}
+
+.social a:hover{
+    background:var(--red);
+
+    border-color:var(--red);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+
+    padding:75px 15px 55px;
+}
+
+.badge{
+    display:inline-block;
+
+    padding:7px 13px;
+
+    border:
+        1px solid
+        rgba(229,9,20,.4);
+
+    border-radius:999px;
+
+    color:#ff7a80;
+
+    background:
+        rgba(229,9,20,.08);
+
+    font-size:13px;
+
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-size:
+        clamp(32px,6vw,64px);
+
+    line-height:1.05;
+
+    text-shadow:
+        0 0 30px
+        rgba(229,9,20,.25);
+}
+
+.hero h1 span{
+    color:var(--red);
+}
+
+.hero p{
+    max-width:700px;
+
+    margin:18px auto;
+
+    color:#aaa;
+
+    line-height:1.9;
+}
+
+.hero-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+}
+
+.btn{
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    text-decoration:none;
+
+    border:
+        1px solid
+        var(--border);
+
+    color:#fff;
+
+    background:#151515;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-weight:bold;
+}
+
+.btn.primary{
+    background:var(--red);
+
+    border-color:var(--red);
+}
+
+.btn:hover{
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 8px 25px
+        rgba(229,9,20,.2);
+}
+
+.btn.primary:hover{
+    background:var(--red2);
+}
+
+
+/* =========================
+   STORE
+========================= */
+
+.store{
+    background:
+        rgba(5,5,5,.35);
+
+    padding:
+        35px 0 70px;
+}
+
+.toolbar{
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+}
+
+.search{
+    flex:1;
+
+    min-width:220px;
+
+    position:relative;
+}
+
+.search input{
+    width:100%;
+
+    padding:13px 15px;
+
+    border-radius:11px;
+
+    border:
+        1px solid
+        var(--border);
+
+    outline:none;
+
+    background:
+        rgba(20,20,20,.85);
+
+    color:#fff;
+
+    font-size:15px;
+}
+
+.search input:focus{
+    border-color:
+        rgba(229,9,20,.7);
+
+    box-shadow:
+        0 0 18px
+        rgba(229,9,20,.08);
+}
+
+.filters{
+    display:flex;
+
+    gap:7px;
+
+    flex-wrap:wrap;
+}
+
+.filter{
+    padding:10px 14px;
+
+    border:
+        1px solid
+        var(--border);
+
+    background:#151515;
+
+    color:#bbb;
+
+    border-radius:9px;
+
+    cursor:pointer;
+}
+
+.filter.active,
+.filter:hover{
+    background:var(--red);
+
+    color:#fff;
+
+    border-color:var(--red);
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+.games{
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fill,
+            minmax(245px,1fr)
+        );
+
+    gap:20px;
+}
+
+.game-card{
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+    background:var(--card);
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:16px;
+
+    backdrop-filter:blur(12px);
+
+    transition:.3s;
+
+    box-shadow:
+        0 10px 35px
+        rgba(0,0,0,.25);
+}
+
+.game-card:hover{
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(229,9,20,.55);
+
+    box-shadow:
+        0 18px 45px
+        rgba(0,0,0,.4),
+
+        0 0 25px
+        rgba(229,9,20,.08);
+}
+
+.cover{
+    height:185px;
+
+    background:#111;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.cover img{
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.45s;
+}
+
+.game-card:hover .cover img{
+    transform:scale(1.06);
+}
+
+.status{
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    padding:6px 9px;
+
+    border-radius:999px;
+
+    font-size:11px;
+
+    font-weight:bold;
+
+    background:
+        rgba(0,0,0,.72);
+
+    backdrop-filter:blur(8px);
+}
+
+.status.complete{
+    color:var(--green);
+
+    border:
+        1px solid
+        rgba(37,229,106,.35);
+}
+
+.status.beta{
+    color:var(--yellow);
+
+    border:
+        1px solid
+        rgba(255,210,26,.35);
+}
+
+.status.incomplete{
+    color:#ff5e66;
+
+    border:
+        1px solid
+        rgba(255,94,102,.35);
+}
+
+.info{
+    padding:17px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    flex:1;
+}
+
+.info h2{
+    font-size:19px;
+
+    margin-bottom:8px;
+}
+
+.info p{
+    color:#aaa;
+
+    font-size:13px;
+
+    line-height:1.75;
+
+    margin-bottom:10px;
+}
+
+.meta{
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:8px;
+
+    color:#777;
+
+    font-size:11px;
+
+    margin-top:auto;
+
+    padding-top:8px;
+}
+
+.downloads{
+    display:flex;
+
+    gap:8px;
+
+    margin-top:14px;
+}
+
+.download{
+    flex:1;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    background:var(--red);
+
+    padding:10px 8px;
+
+    border-radius:9px;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    transition:.2s;
+}
+
+.download.secondary{
+    background:#242424;
+}
+
+.download:hover{
+    background:var(--red2);
+
+    transform:
+        translateY(-2px);
+}
+
+.download.secondary:hover{
+    background:#333;
+}
+
+.disabled{
+    opacity:.35;
+
+    pointer-events:none;
+}
+
+.no-results{
+    display:none;
+
+    text-align:center;
+
+    color:#777;
+
+    padding:70px 15px;
+}
+
+
+/* =========================
+   BUBBLES
+========================= */
+
+.bubbles{
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-2;
+
+    overflow:hidden;
+}
+
+.bubble{
+    position:absolute;
+
+    bottom:-100px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(229,9,20,.16);
+
+    background:
+        rgba(229,9,20,.055);
+
+    animation:
+        rise
+        linear
+        infinite;
+}
+
+@keyframes rise{
+
+    to{
+        transform:
+            translateY(-120vh)
+            translateX(50px);
+
+        opacity:0;
     }
-    @keyframes flicker {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.9; }
-      60% { opacity: 0.95; }
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    border-top:
+        1px solid
+        var(--border);
+
+    background:
+        rgba(5,5,5,.72);
+
+    padding:35px 15px;
+
+    text-align:center;
+
+    color:#777;
+}
+
+footer strong{
+    color:#fff;
+}
+
+.footer-links{
+    margin:12px 0;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.footer-links a{
+    color:#aaa;
+
+    text-decoration:none;
+}
+
+.footer-links a:hover{
+    color:var(--red);
+}
+
+
+/* =========================
+   TOP
+========================= */
+
+#top{
+    position:fixed;
+
+    left:18px;
+
+    bottom:18px;
+
+    width:45px;
+
+    height:45px;
+
+    border:
+        1px solid
+        var(--border);
+
+    border-radius:50%;
+
+    background:#151515;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    display:none;
+
+    z-index:90;
+
+    font-size:18px;
+}
+
+#top:hover{
+    background:var(--red);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:760px){
+
+    .nav{
+        padding:12px 0;
+
+        justify-content:center;
     }
-    :root {
-      --card-width: 180px;
+
+    .logo{
+        width:100%;
+
+        text-align:center;
     }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 1rem;
+
+    nav{
+        justify-content:center;
     }
-    nav {
-      width: 100%;
-      background: rgba(20, 0, 0, 0.8);
-      padding: 1rem 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+
+    .social{
+        display:none;
     }
-    nav .logo {
-      font-family:  cursive;
-      font-size: 1.5rem;
-      color: #e60000;
-      flex: 1 0 auto;
-      text-align: center;
+
+    .hero{
+        padding-top:55px;
     }
-    nav ul {
-      list-style: none;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      flex: 2 0 auto;
-      justify-content: center;
+
+    .games{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+        gap:12px;
     }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s;
-      font-size: 1rem;
+
+    .cover{
+        height:145px;
     }
-    nav ul li a:hover { color: #e60000; }
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-      font-size: 1.25rem;
-      flex: 1 0 auto;
-      justify-content: center;
+
+    .info{
+        padding:13px;
     }
-    .social-icons a { transition: color 0.3s; }
-    .social-icons a:hover { color: #e60000; }
-    header {
-      text-align: center;
-      padding: 0rem 1rem;
-      position: relative;
+
+    .info h2{
+        font-size:16px;
     }
-    header h1 {
-      font-size: 2.5rem;
-      color: #e60000;
-      text-shadow: 0 0 10px #e60000;
-      z-index: 1;
+
+    .info p{
+        font-size:12px;
     }
-    section {
-      background: rgba(20, 0, 0, 0.8);
-      padding: 3rem 0;
+}
+
+@media(max-width:460px){
+
+    .container{
+        width:
+            min(
+                100% - 20px,
+                1180px
+            );
     }
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(var(--card-width), 1fr));
-      gap: 1.5rem;
-      justify-content: center;
+
+    .games{
+        grid-template-columns:1fr;
     }
-    .game-card {
-      background: rgba(30, 0, 0, 0.8);
-      border: 1px solid #e60000;
-      border-radius: 0.5rem;
-      overflow: hidden;
-      transition: transform 0.3s;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
+
+    .cover{
+        height:190px;
     }
-    .game-card:hover { transform: scale(1.03); }
-    .game-card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      background: rgba(0,0,0,0.5);
+
+    .toolbar{
+        display:block;
     }
-    .game-card .info {
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+
+    .filters{
+        margin-top:10px;
     }
-    .game-card .info h2 {
-      font-family: cursive;
-      color: #e60000;
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
+
+    .filter{
+        flex:1;
     }
-    .game-card .info p {
-      font-size: 0.875rem;
-      margin-bottom: 0.75rem;
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    *{
+        scroll-behavior:auto!important;
+
+        animation:none!important;
+
+        transition:none!important;
     }
-    .download-buttons {
-      display: flex;
-      gap: 0.5rem;
-      justify-content: center;
-      margin-top: 0.5rem;
-    }
-    .download-buttons a {
-      background-color: #e60000;
-      border: none;
-      border-radius: 50%;
-      width: 2.2rem;
-      height: 2.2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-decoration: none;
-      font-size: 1rem;
-      transition: background-color 0.3s;
-    }
-    .download-buttons a:hover { background-color: #ff1a1a; }
-    .bubbles {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none;
-      overflow: hidden;
-      z-index: 1;
-    }
-    .bubble {
-      position: absolute;
-      bottom: -100px;
-      background: rgba(230, 0, 0, 0.2);
-      border-radius: 50%;
-      animation: rise linear infinite;
-    }
-    @keyframes rise {
-      to { transform: translateY(-120vh); opacity: 0; }
-    }
-    #audio-btn {
-      position: fixed;
-      bottom: 1rem; right: 1rem;
-      background: #e60000;
-      border: none;
-      border-radius: 50%;
-      width: 3rem; height: 3rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      z-index: 2;
-    }
-    #audio-btn i { color: #fff; font-size: 1.25rem; }
-    footer {
-      background: rgba(20, 0, 0, 0.8);
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    footer p { margin: 0.5rem 0; font-size: 0.9rem; }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      nav ul, .social-icons {
-        flex: 1 0 100%;
-        margin-top: 0.5rem;
-        justify-content: center;
-      }
-      nav { flex-direction: column; }
-    }
-  </style>
+}
+</style>
 </head>
+
+
 <body>
 
- <!-- Background Bubbles -->
- <div class="bubbles"></div>
- <!-- Navigation -->
- <nav class="container">
-   <div class="logo">piro ontan game</div>
-   <ul>
-     <li><a href="https://piroontan.github.io/GOST-OF-DEEP-MEDIA/">GOST OF DEEP MEDIA <i class="fas fa-home"></i></a></li>
-     <li><a href="#games">الألعاب <i class="fas fa-gamepad"></i></a></li>
-     <li><a href="#contact">تواصل معنا <i class="fas fa-envelope"></i></a></li>
-   </ul>
-   <div class="social-icons">
-     <a href="https://www.youtube.com/@PIRO_ONTAN" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
-     <a href="https://www.facebook.com/groups/1048437976301513" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-   </div>
- </nav>
- <!-- Header -->
- <header>
-   <h1>اهلا بك في عالمي</h1>
- </header>
- <!-- Games Section -->
+
+<div
+    class="bubbles"
+    id="bubbles">
+</div>
+
+
+<header>
+
+<div class="container nav">
+
+
+<a
+    class="logo"
+    href="#top-page">
+
+    PIRO ONTAN
+
+    <span>
+        GAME STORE
+    </span>
+
+</a>
+
+
+<nav>
+
+<a
+    href="https://piroontan.github.io/GOST-OF-DEEP-MEDIA/">
+
+    GOST OF DEEP MEDIA
+
+</a>
+
+
+<a href="#games">
+
+    الألعاب
+
+</a>
+
+
+<a href="#contact">
+
+    تواصل
+
+</a>
+
+</nav>
+
+
+<div class="social">
+
+<a
+    href="https://www.youtube.com/@PIRO_ONTAN"
+    target="_blank"
+    rel="noopener"
+    title="YouTube">
+
+    ▶
+
+</a>
+
+
+<a
+    href="https://www.facebook.com/groups/1048437976301513"
+    target="_blank"
+    rel="noopener"
+    title="Facebook">
+
+    f
+
+</a>
+
+</div>
+
+
+</div>
+
+</header>
 
 
 
-  <section class="games container" id="games">
-    <div class="game-card">
-      <img src="pn (11).png" alt="im crazy">
-      <div class="info">
-        <h2>im crazy</h2>
-        <p>فقط نطبيق مجنون للتخمين و لطبعة بستمرار وفعل شيء تئمره به انت تفهم قصدي ? ;)</p>
-        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
-        <div class="download-buttons">
-          <!-- <a href="#" title="Windows">💻</a> -->
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <a href="https://www.dropbox.com/scl/fi/iqqace25eyk4nmqj1sn08/im-craziy-apk-beta-a.apk?rlkey=lbkv76m0rl6q2p401h0rd0dbt&amp;st=ljxdgfiq&amp;dl=0" title="android">🤖</a>
-        </div>
-      </div>
-    </div>
+<main id="top-page">
 
-    <div class="game-card">
-      <img src="pn (5).png" alt="dors bad win">
-      <div class="info">
-        <h2>dors bad win</h2>
-        <p>محاكات مشابهة لفايروس xp  لكن هادا امن </p>
-        <p style="color: #2ee600;align-self: anchor-center;"> مكتمل</p>
-        <div class="download-buttons">
-          <a href="https://www.dropbox.com/scl/fi/t6u0npifj6ww2rswc9k9z/dors-bad-windows-pc.zip?rlkey=aihwx31mgg9odeivea2qq7afo&st=5ghpos80&dl=0" title="Windows">💻</a>
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <a href="https://www.dropbox.com/scl/fi/pt02osx6lkdebog9vb7rl/dors-bad-windows.apk?rlkey=91bw4j8k2blq67lk3t5to006g&st=9dqysyi4&dl=0" title="android">🤖</a>
-        </div>
-      </div>
-    </div>
 
-    <div class="game-card">
-      <img src="pn (14).png" alt="arona ace السيل الجارف">
-      <div class="info">
-        <h2>arona ace</h2>
-        <p>مغامرة مشوقة بالأحداث في قلب الطبيعة الحارقة.</p>
-        <p style="color: #2ee600;align-self: anchor-center;"> مكتمل</p>
-        <div class="download-buttons">
-          <a href="https://www.dropbox.com/scl/fi/dyww85dyjvd6e30g6ve3b/arona-ace-ver-1.2.8-complet-99.zip?rlkey=jdncqj5fzlvh4a7ox8fq5xtk0&st=ayb8yck4&dl=0" title="Windows">💻</a>
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <!-- <a href="#" title="android">🤖</a> -->
-        </div>
-      </div>
-    </div>
+<section class="hero">
 
-    <div class="game-card">
-      <img src="pn (19).png" alt="Back rooms tunisia">
-      <div class="info">
-        <h2>Back rooms tunisia</h2>
-        <p>استعد للعالم المجهول لشريكة ايسنك للغرف الخلفية حاول النجات</p>
-        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
-        <div class="download-buttons">          
-           <a href="https://www.dropbox.com/scl/fi/duer84haxtx8pvpwmuapo/backrooms-old-ver-2-not-complet-PC.zip?rlkey=tjuyku7usbcm7hj89mxejhsa4&amp;st=08iq58yb&amp;dl=0" title="Windows">💻</a>
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <!-- <a href="#" title="android">🤖</a> -->
-        </div>
-      </div>
-    </div>
 
-    <div class="game-card">
-      <img src="pn (18).png" alt="panap">
-      <div class="info">
-        <h2>panap</h2>
-        <p>استعد -- خوفاً في هذه اللعبة ذات الألغاز المخفية.</p>
-        <p style="color: #e60000;align-self: anchor-center;">غير مكتمل</p>
-        <div class="download-buttons">
-          <!-- <a href="#" title="Windows">💻</a> -->
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <!-- <a href="#" title="android">🤖</a> -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="game-card">
-      <img src="df (3).png" alt="D-max">
-      <div class="info">
-        <h2>D-max</h2>
-        <p> النسخة التجريبية من محاكات التهريب للوقود   و الهرولة في الصحراء الغربية</p>
-        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
-        <div class="download-buttons">          
-          <a href="https://www.dropbox.com/scl/fi/sq4fe43oo8kjmhcffu407/D-max-falaga-beta-not-complet-PC.zip?rlkey=v1txb3mxbvowkmym4v00dagfz&st=uwbo2vyr&dl=0" title="Windows">💻</a>
-          <a href="https://www.dropbox.com/scl/fi/nm0au8umlapo4af6kf2rn/d-max_contra_-src.zip?rlkey=hcnyy5niozmbsjyspu8ong0on&st=1v2kpajn&dl=0" title="Windows">‹⁄›</a>
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <!-- <a href="#" title="android">🤖</a> -->
-        </div>
-      </div>
-    </div>
-    
-    <div class="game-card">
-      <img src="18.png" alt="D-max">
-      <div class="info">
-        <h2>stop +18</h2>
-        <p> تطبيق محقز لمحاربة الادمان</p>
-        <p style="color: #2ee600;align-self: anchor-center;"> مكتمل</p>
-        <div class="download-buttons">          
-          <a href="https://www.dropbox.com/scl/fi/6bua97cur9cnoxe9scd81/stop-18-pc.zip?rlkey=23liu7q1be77qqluufrxbbzwm&st=8g3s9f8g&dl=0" title="Windows">💻</a>
-          <!-- <a href="#" title="macOS">🍎</a> -->
-          <a href="https://www.dropbox.com/scl/fi/kzjim117sdommbeczz6nh/stop-18.apk?rlkey=brt1g5nk45qtx31cgf9s446pb&st=ef3799t4&dl=0" title="android">🤖</a>
-        </div>
-      </div>
-    </div>
+<div class="badge">
 
-    
-    <div class="game-card">
-      <img src="df (6).png" alt="D-max">
-      <div class="info">
-        <h2>car roder</h2>
-        <p>فقط عالم مفتوح انت حر افعل ما تشاء في هاته الخريطة المعزولة عن العالم</p>
-        <p style="color: #e2e600;align-self: anchor-center;">شبه مكتمل </p>
-        <div class="download-buttons">          
-        <a href="https://www.mediafire.com/file/nzqsramo720qg4l/car_roder.zip/file" title="Windows">💻</a>
-        <!-- <a href="#" title="macOS">🍎</a> -->
-        <!-- <a href="https://www.dropbox.com/scl/fi/kzjim117sdommbeczz6nh/stop-18.apk?rlkey=brt1g5nk45qtx31cgf9s446pb&st=t90xu6q1&dl=0" title="android">🤖</a> -->
-        </div>
-      </div>
-    </div>
-  </section>
+    🎮 PIRO ONTAN GAME STORE
+
+</div>
+
+
+<h1>
+
+    أهلاً بك في
+
+    <span>
+        عالمي
+    </span>
+
+</h1>
+
+
+<p>
+
+    متجر PIRO ONTAN للألعاب والمشاريع.
+    استكشف الألعاب، حمّل النسخ المتاحة
+    واستمتع بالمشاريع التي أعمل عليها.
+
+</p>
+
+
+<div class="hero-buttons">
+
+
+<a
+    class="btn primary"
+    href="#games">
+
+    🎮 استكشف الألعاب
+
+</a>
+
+
+<a
+    class="btn"
+    href="https://piroontan.github.io/GOST-OF-DEEP-MEDIA/">
+
+    GOST OF DEEP MEDIA
+
+</a>
+
+
+</div>
+
+</section>
+
+
+
+<section
+    class="store"
+    id="games">
+
+
+<div class="container">
+
+
+<div class="toolbar">
+
+
+<div class="search">
+
+<input
+    id="search"
+    type="search"
+    placeholder="🔎 ابحث عن لعبة..."
+    aria-label="البحث عن لعبة">
+
+</div>
+
+
+<div class="filters">
+
+
+<button
+    class="filter active"
+    data-filter="all">
+
+    الكل
+
+</button>
+
+
+<button
+    class="filter"
+    data-filter="complete">
+
+    مكتملة
+
+</button>
+
+
+<button
+    class="filter"
+    data-filter="beta">
+
+    شبه مكتملة
+
+</button>
+
+
+<button
+    class="filter"
+    data-filter="incomplete">
+
+    غير مكتملة
+
+</button>
+
+
+</div>
+
+</div>
+
+
+<div
+    class="games"
+    id="gamesList">
+
+</div>
+
+
+<div
+    class="no-results"
+    id="noResults">
+
+    لا توجد ألعاب مطابقة للبحث.
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<footer id="contact">
+
+
+<strong>
+
+    PIRO ONTAN GAME STORE
+
+</strong>
+
+
+<p>
+
+    Game Development • Programming • Projects
+
+</p>
+
+
+<div class="footer-links">
+
+
+<a
+    href="https://www.youtube.com/@PIRO_ONTAN"
+    target="_blank"
+    rel="noopener">
+
+    YouTube
+
+</a>
+
+
+<a
+    href="https://www.facebook.com/groups/1048437976301513"
+    target="_blank"
+    rel="noopener">
+
+    Facebook
+
+</a>
+
+
+<a
+    href="https://piroontan.github.io/GOST-OF-DEEP-MEDIA/">
+
+    GOST OF DEEP MEDIA
+
+</a>
+
+
+</div>
+
+
+<p>
+
+    © 2026 PIRO ONTAN — جميع الحقوق محفوظة
+
+</p>
+
+
+</footer>
+
+
+
+<button
+    id="top"
+    aria-label="العودة للأعلى">
+
+    ↑
+
+</button>
+
+
+
+<script>
+
+
+const games = [
+
+
+{
+
+name:"im crazy",
+
+image:"pn (11).png",
+
+description:
+"تطبيق مجنون للتخمين والطباعة باستمرار وفعل ما تأمره به.",
+
+status:"شبه مكتمل",
+
+type:"beta",
+
+downloads:[
+
+[
+"🤖 Android",
+"https://www.dropbox.com/scl/fi/iqqace25eyk4nmqj1sn08/im-craziy-apk-beta-a.apk?rlkey=lbkv76m0rl6q2p401h0rd0dbt&st=ljxdgfiq&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"dors bad win",
+
+image:"pn (5).png",
+
+description:
+"محاكاة مشابهة لفكرة فيروس XP، لكنها آمنة.",
+
+status:"مكتمل",
+
+type:"complete",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.dropbox.com/scl/fi/t6u0npifj6ww2rswc9k9z/dors-bad-windows-pc.zip?rlkey=aihwx31mgg9odeivea2qq7afo&st=5ghpos80&dl=0"
+],
+
+[
+"🤖 Android",
+"https://www.dropbox.com/scl/fi/pt02osx6lkdebog9vb7rl/dors-bad-windows.apk?rlkey=91bw4j8k2blq67lk3t5to006g&st=9dqysyi4&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"arona ace",
+
+image:"pn (14).png",
+
+description:
+"مغامرة مشوقة بالأحداث في قلب الطبيعة الحارقة.",
+
+status:"مكتمل",
+
+type:"complete",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.dropbox.com/scl/fi/dyww85dyjvd6e30g6ve3b/arona-ace-ver-1.2.8-complet-99.zip?rlkey=jdncqj5fzlvh4a7ox8fq5xtk0&st=ayb8yck4&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"Back rooms tunisia",
+
+image:"pn (19).png",
+
+description:
+"استعد للعالم المجهول للغرف الخلفية وحاول النجاة.",
+
+status:"شبه مكتمل",
+
+type:"beta",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.dropbox.com/scl/fi/duer84haxtx8pvpwmuapo/backrooms-old-ver-2-not-complet-PC.zip?rlkey=tjuyku7usbcm7hj89mxejhsa4&st=08iq58yb&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"panap",
+
+image:"pn (18).png",
+
+description:
+"استعد للخوف في هذه اللعبة ذات الألغاز المخفية.",
+
+status:"غير مكتمل",
+
+type:"incomplete",
+
+downloads:[]
+
+},
+
+
+
+{
+
+name:"D-max",
+
+image:"df (3).png",
+
+description:
+"نسخة تجريبية من محاكاة التهريب للوقود والهرولة في الصحراء الغربية.",
+
+status:"شبه مكتمل",
+
+type:"beta",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.dropbox.com/scl/fi/sq4fe43oo8kjmhcffu407/D-max-falaga-beta-not-complet-PC.zip?rlkey=v1txb3mxbvowkmym4v00dagfz&st=uwbo2vyr&dl=0"
+],
+
+[
+"</> Source",
+"https://www.dropbox.com/scl/fi/nm0au8umlapo4af6kf2rn/d-max_contra_-src.zip?rlkey=hcnyy5niozmbsjyspu8ong0on&st=1v2kpajn&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"stop +18",
+
+image:"18.png",
+
+description:
+"تطبيق توعوي يساعد على الابتعاد عن المحتوى غير المناسب والعادات الرقمية الضارة.",
+
+status:"مكتمل",
+
+type:"complete",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.dropbox.com/scl/fi/6bua97cur9cnoxe9scd81/stop-18-pc.zip?rlkey=23liu7q1be77qqluufrxbbzwm&st=8g3s9f8g&dl=0"
+],
+
+[
+"🤖 Android",
+"https://www.dropbox.com/scl/fi/kzjim117sdommbeczz6nh/stop-18.apk?rlkey=brt1g5nk45qtx31cgf9s446pb&st=ef3799t4&dl=0"
+]
+
+]
+
+},
+
+
+
+{
+
+name:"car roder",
+
+image:"df (6).png",
+
+description:
+"عالم مفتوح، أنت حر: افعل ما تشاء في هذه الخريطة المعزولة عن العالم.",
+
+status:"شبه مكتمل",
+
+type:"beta",
+
+downloads:[
+
+[
+"💻 Windows",
+"https://www.mediafire.com/file/nzqsramo720qg4l/car_roder.zip/file"
+]
+
+]
+
+}
+
+];
+
+
+
+const list =
+document.getElementById(
+    "gamesList"
+);
+
+
+const search =
+document.getElementById(
+    "search"
+);
+
+
+const noResults =
+document.getElementById(
+    "noResults"
+);
+
+
+let currentFilter =
+"all";
+
+
+
+function safe(text){
+
+    return String(text)
+
+        .replace(
+            /[&<>"']/g,
+
+            m=>({
+
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#039;"
+
+            }[m])
+        );
+}
+
+
+
+function render(){
+
+
+    const q =
+        search.value
+        .trim()
+        .toLowerCase();
+
+
+
+    const filtered =
+        games.filter(g=>{
+
+
+            const matchFilter =
+
+                currentFilter === "all"
+
+                ||
+
+                g.type ===
+                currentFilter;
+
+
+
+            const matchSearch =
+
+                g.name
+                .toLowerCase()
+                .includes(q)
+
+                ||
+
+                g.description
+                .toLowerCase()
+                .includes(q);
+
+
+
+            return (
+
+                matchFilter &&
+                matchSearch
+
+            );
+
+        });
+
+
+
+    list.innerHTML =
+
+
+        filtered.map(g=>{
+
+
+            const buttons =
+
+                g.downloads.length
+
+                ?
+
+                g.downloads
+
+                .map((d,i)=>
+
+
+                    `<a
+
+                        class="download ${
+                            i>0
+                            ?"secondary"
+                            :""
+                        }"
+
+                        href="${d[1]}"
+
+                        target="_blank"
+
+                        rel="noopener noreferrer">
+
+                        ${safe(d[0])}
+
+                    </a>`
+
+                )
+
+                .join("")
+
+
+                :
+
+
+                `<span
+
+                    class="download disabled">
+
+                    لا يوجد تحميل حالياً
+
+                </span>`;
+
+
+
+            return `
+
+            <article
+                class="game-card"
+                data-type="${g.type}">
+
+
+                <div class="cover">
+
+
+                    <img
+
+                        src="${safe(g.image)}"
+
+                        alt="${safe(g.name)}"
+
+                        loading="lazy"
+
+                        onerror="
+                            this.style.opacity='.25'
+                        ">
+
+
+                    <span
+                        class="status ${g.type}">
+
+                        ${safe(g.status)}
+
+                    </span>
+
+
+                </div>
+
+
+                <div class="info">
+
+
+                    <h2>
+
+                        ${safe(g.name)}
+
+                    </h2>
+
+
+                    <p>
+
+                        ${safe(g.description)}
+
+                    </p>
+
+
+                    <div class="meta">
+
+                        <span>
+
+                            🎮 Game
+
+                        </span>
+
+
+                        <span>
+
+                            PIRO ONTAN
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="downloads">
+
+                        ${buttons}
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+            `;
+
+        })
+
+        .join("");
+
+
+    noResults.style.display =
+
+        filtered.length
+
+        ?
+
+        "none"
+
+        :
+
+        "block";
+
+}
+
+
+
+document
+.querySelectorAll(".filter")
+.forEach(btn=>{
+
+
+    btn.addEventListener(
+        "click",
+
+        ()=>{
+
+
+            document
+            .querySelectorAll(
+                ".filter"
+            )
+            .forEach(b=>{
+
+                b.classList.remove(
+                    "active"
+                );
+
+            });
+
+
+            btn.classList.add(
+                "active"
+            );
+
+
+            currentFilter =
+                btn.dataset.filter;
+
+
+            render();
+
+        }
+
+    );
+
+});
+
+
+
+search.addEventListener(
+    "input",
+    render
+);
+
+
+
+const bubbles =
+document.getElementById(
+    "bubbles"
+);
+
+
+
+for(
+    let i=0;
+    i<24;
+    i++
+){
+
+    const b =
+        document.createElement(
+            "span"
+        );
+
+
+    b.className =
+        "bubble";
+
+
+    const s =
+        15 +
+        Math.random()*80;
+
+
+    b.style.width =
+        s+"px";
+
+
+    b.style.height =
+        s+"px";
+
+
+    b.style.left =
+        Math.random()*100+"%";
+
+
+    b.style.animationDuration =
+        (12+Math.random()*16)+"s";
+
+
+    b.style.animationDelay =
+        (-Math.random()*20)+"s";
+
+
+    bubbles.appendChild(b);
+
+}
+
+
+
+const topBtn =
+document.getElementById(
+    "top"
+);
+
+
+
+window.addEventListener(
+    "scroll",
+
+    ()=>{
+
+        topBtn.style.display =
+
+            scrollY > 450
+
+            ?
+
+            "grid"
+
+            :
+
+            "none";
+
+    }
+
+);
+
+
+
+topBtn.onclick = ()=>
+
+    scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+
+
+render();
+
+</script>
+
 </body>
 </html>
