@@ -1,0 +1,22 @@
+{
+    "name": "PIRO ONTAN GAME STORE",
+    "short_name": "PIRO ONTAN",
+    "description": "متجر PIRO ONTAN للألعاب والمشاريع.",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#050505",
+    "theme_color": "#e50914",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "icon.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

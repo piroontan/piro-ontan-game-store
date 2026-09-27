@@ -1,107 +1,355 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="PIRO ONTAN GAME STORE - متجر ألعاب ومشاريع PIRO ONTAN">
-<meta name="author" content="PIRO ONTAN">
-<meta name="theme-color" content="#080808">
 
-<title>PIRO ONTAN GAME STORE</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+>
 
-<link rel="icon" href="icon.png">
+<!-- =========================
+     SEO
+========================= -->
+
+<title>PIRO ONTAN GAME STORE | متجر ألعاب ومشاريع</title>
+
+<meta
+    name="description"
+    content="PIRO ONTAN GAME STORE - متجر ألعاب ومشاريع PIRO ONTAN. اكتشف الألعاب والمشاريع وحمّل النسخ المتاحة للكمبيوتر والأندرويد."
+>
+
+<meta
+    name="keywords"
+    content="PIRO ONTAN, ألعاب, متجر ألعاب, Godot, ألعاب Godot, Android Games, Windows Games, PIRO ONTAN GAME STORE"
+>
+
+<meta
+    name="author"
+    content="PIRO ONTAN"
+>
+
+<meta
+    name="robots"
+    content="index, follow"
+>
+
+<meta
+    name="googlebot"
+    content="index, follow"
+>
+
+<meta
+    name="theme-color"
+    content="#080808"
+>
+
+<meta
+    name="color-scheme"
+    content="dark"
+>
+
+<link
+    rel="canonical"
+    href="https://piroontan.github.io/"
+>
+
+
+<!-- =========================
+     FAVICON
+========================= -->
+
+<link
+    rel="icon"
+    type="image/png"
+    sizes="32x32"
+    href="icon.png"
+>
+
+<link
+    rel="icon"
+    type="image/png"
+    sizes="48x48"
+    href="icon.png"
+>
+
+<link
+    rel="icon"
+    type="image/png"
+    sizes="96x96"
+    href="icon.png"
+>
+
+<link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="icon.png"
+>
+
+
+<!-- =========================
+     WEB APP
+========================= -->
+
+<link
+    rel="manifest"
+    href="manifest.json"
+>
+
+
+<!-- =========================
+     SOCIAL MEDIA
+========================= -->
+
+<meta
+    property="og:type"
+    content="website"
+>
+
+<meta
+    property="og:title"
+    content="PIRO ONTAN GAME STORE"
+>
+
+<meta
+    property="og:description"
+    content="متجر PIRO ONTAN للألعاب والمشاريع."
+>
+
+<meta
+    property="og:url"
+    content="https://piroontan.github.io/"
+>
+
+<meta
+    property="og:image"
+    content="https://piroontan.github.io/icon.png"
+>
+
+<meta
+    property="og:site_name"
+    content="PIRO ONTAN GAME STORE"
+>
+
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="PIRO ONTAN GAME STORE"
+>
+
+<meta
+    name="twitter:description"
+    content="متجر PIRO ONTAN للألعاب والمشاريع."
+>
+
+<meta
+    name="twitter:image"
+    content="https://piroontan.github.io/icon.png"
+>
+
+
+<!-- =========================
+     STRUCTURED DATA
+========================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "PIRO ONTAN GAME STORE",
+    "alternateName": "PIRO ONTAN",
+    "url": "https://piroontan.github.io/",
+    "description": "متجر PIRO ONTAN للألعاب والمشاريع.",
+    "publisher": {
+        "@type": "Person",
+        "name": "PIRO ONTAN"
+    }
+}
+</script>
+
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-:root{
-    --red:#e50914;
-    --red2:#ff2430;
-    --bg:#050505;
-    --card:rgba(18,18,18,.78);
-    --border:rgba(255,255,255,.09);
-    --muted:#aaa;
-    --green:#25e56a;
-    --yellow:#ffd21a;
-}
-
 html{
     scroll-behavior:smooth;
+    scroll-padding-top:90px;
 }
+
+:root{
+
+    --red:#e50914;
+    --red2:#ff2430;
+
+    --bg:#050505;
+
+    --card:rgba(18,18,18,.78);
+
+    --border:rgba(255,255,255,.09);
+
+    --muted:#aaa;
+
+    --green:#25e56a;
+
+    --yellow:#ffd21a;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
 
 body{
-    font-family:Arial,Tahoma,sans-serif;
+
+    font-family:
+        Arial,
+        Tahoma,
+        sans-serif;
+
     color:#fff;
-    background:#050505;
+
+    background:
+        var(--bg);
+
     min-height:100vh;
+
     overflow-x:hidden;
+
+    -webkit-tap-highlight-color:
+        transparent;
+
 }
 
+
+/* BACKGROUND */
+
 body:before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     z-index:-5;
 
     background:
+
         linear-gradient(
             rgba(0,0,0,.82),
             rgba(0,0,0,.94)
         ),
+
         url("pn (1).png")
-        center/cover fixed no-repeat;
+
+        center center /
+
+        cover
+
+        no-repeat;
+
 }
 
+
+/* RED LIGHT */
+
 body:after{
+
     content:"";
+
     position:fixed;
+
     inset:0;
+
     z-index:-4;
+
     pointer-events:none;
 
     background:
+
         radial-gradient(
             circle at 15% 20%,
             rgba(229,9,20,.13),
             transparent 28%
         ),
+
         radial-gradient(
             circle at 85% 75%,
             rgba(229,9,20,.10),
             transparent 30%
         );
+
 }
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .container{
-    width:min(1180px,calc(100% - 30px));
-    margin:auto;
+
+    width:
+        min(
+            1180px,
+            calc(100% - 30px)
+        );
+
+    margin:
+        0 auto;
+
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 header{
-    position:sticky;
+
+    position:
+        sticky;
+
     top:0;
+
     z-index:100;
 
-    background:rgba(7,7,7,.82);
+    background:
+        rgba(7,7,7,.88);
 
     border-bottom:
         1px solid
         var(--border);
 
-    backdrop-filter:blur(16px);
+    backdrop-filter:
+        blur(16px);
+
+    -webkit-backdrop-filter:
+        blur(16px);
+
 }
 
+
 .nav{
-    min-height:72px;
+
+    min-height:
+        72px;
 
     display:flex;
 
@@ -110,9 +358,12 @@ header{
     justify-content:space-between;
 
     gap:20px;
+
 }
 
+
 .logo{
+
     color:#fff;
 
     text-decoration:none;
@@ -124,51 +375,77 @@ header{
     font-size:20px;
 
     white-space:nowrap;
+
 }
+
 
 .logo span{
-    color:var(--red);
+
+    color:
+        var(--red);
+
 }
 
+
+/* NAV */
+
 nav{
+
     display:flex;
 
-    gap:8px;
+    gap:6px;
 
     align-items:center;
 
     flex-wrap:wrap;
+
 }
 
+
 nav a{
+
     color:#ddd;
 
     text-decoration:none;
 
-    padding:9px 13px;
+    padding:
+        9px 13px;
 
     border-radius:9px;
 
-    transition:.25s;
+    transition:
+        .25s;
 
     font-size:14px;
+
 }
 
+
 nav a:hover{
+
     background:
         rgba(229,9,20,.14);
 
     color:#fff;
+
 }
 
+
+/* SOCIAL */
+
 .social{
+
     display:flex;
 
     gap:8px;
+
 }
 
+
 .social a{
+
     width:38px;
+
     height:38px;
 
     display:grid;
@@ -187,29 +464,42 @@ nav a:hover{
 
     background:
         rgba(255,255,255,.04);
+
 }
+
 
 .social a:hover{
-    background:var(--red);
 
-    border-color:var(--red);
+    background:
+        var(--red);
+
+    border-color:
+        var(--red);
+
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero{
+
     text-align:center;
 
-    padding:75px 15px 55px;
+    padding:
+        75px 15px
+        55px;
+
 }
 
+
 .badge{
+
     display:inline-block;
 
-    padding:7px 13px;
+    padding:
+        7px 13px;
 
     border:
         1px solid
@@ -225,34 +515,58 @@ nav a:hover{
     font-size:13px;
 
     margin-bottom:18px;
+
 }
 
-.hero h1{
-    font-size:
-        clamp(32px,6vw,64px);
 
-    line-height:1.05;
+.hero h1{
+
+    font-size:
+        clamp(
+            32px,
+            6vw,
+            64px
+        );
+
+    line-height:
+        1.05;
 
     text-shadow:
         0 0 30px
         rgba(229,9,20,.25);
+
 }
+
 
 .hero h1 span{
-    color:var(--red);
+
+    color:
+        var(--red);
+
 }
 
-.hero p{
-    max-width:700px;
 
-    margin:18px auto;
+.hero p{
+
+    width:
+        min(
+            700px,
+            100%
+        );
+
+    margin:
+        18px auto;
 
     color:#aaa;
 
-    line-height:1.9;
+    line-height:
+        1.9;
+
 }
 
+
 .hero-buttons{
+
     display:flex;
 
     justify-content:center;
@@ -262,9 +576,12 @@ nav a:hover{
     flex-wrap:wrap;
 
     margin-top:25px;
+
 }
 
+
 .btn{
+
     display:inline-flex;
 
     align-items:center;
@@ -273,7 +590,10 @@ nav a:hover{
 
     gap:8px;
 
-    padding:12px 18px;
+    min-height:46px;
+
+    padding:
+        12px 18px;
 
     border-radius:10px;
 
@@ -289,44 +609,66 @@ nav a:hover{
 
     cursor:pointer;
 
-    transition:.25s;
+    transition:
+        .25s;
 
     font-weight:bold;
+
+    touch-action:
+        manipulation;
+
 }
+
 
 .btn.primary{
-    background:var(--red);
 
-    border-color:var(--red);
+    background:
+        var(--red);
+
+    border-color:
+        var(--red);
+
 }
 
+
 .btn:hover{
+
     transform:
         translateY(-2px);
 
     box-shadow:
         0 8px 25px
         rgba(229,9,20,.2);
+
 }
+
 
 .btn.primary:hover{
-    background:var(--red2);
+
+    background:
+        var(--red2);
+
 }
 
 
-/* =========================
+/* =========================================================
    STORE
-========================= */
+========================================================= */
 
 .store{
+
     background:
         rgba(5,5,5,.35);
 
     padding:
-        35px 0 70px;
+        35px 0
+        70px;
+
 }
 
+
 .toolbar{
+
     display:flex;
 
     gap:12px;
@@ -338,20 +680,29 @@ nav a:hover{
     flex-wrap:wrap;
 
     margin-bottom:25px;
+
 }
+
 
 .search{
-    flex:1;
 
-    min-width:220px;
+    flex:
+        1 1 300px;
 
-    position:relative;
+    min-width:
+        220px;
+
 }
 
+
 .search input{
+
     width:100%;
 
-    padding:13px 15px;
+    min-height:46px;
+
+    padding:
+        13px 15px;
 
     border-radius:11px;
 
@@ -367,27 +718,39 @@ nav a:hover{
     color:#fff;
 
     font-size:15px;
+
 }
 
+
 .search input:focus{
+
     border-color:
         rgba(229,9,20,.7);
 
     box-shadow:
         0 0 18px
         rgba(229,9,20,.08);
+
 }
 
+
 .filters{
+
     display:flex;
 
     gap:7px;
 
     flex-wrap:wrap;
+
 }
 
+
 .filter{
-    padding:10px 14px;
+
+    min-height:42px;
+
+    padding:
+        10px 14px;
 
     border:
         1px solid
@@ -400,35 +763,51 @@ nav a:hover{
     border-radius:9px;
 
     cursor:pointer;
+
+    touch-action:
+        manipulation;
+
 }
+
 
 .filter.active,
 .filter:hover{
-    background:var(--red);
+
+    background:
+        var(--red);
 
     color:#fff;
 
-    border-color:var(--red);
+    border-color:
+        var(--red);
+
 }
 
 
-/* =========================
+/* =========================================================
    GAMES
-========================= */
+========================================================= */
 
 .games{
+
     display:grid;
 
     grid-template-columns:
         repeat(
             auto-fill,
-            minmax(245px,1fr)
+            minmax(
+                245px,
+                1fr
+            )
         );
 
     gap:20px;
+
 }
 
+
 .game-card{
+
     position:relative;
 
     overflow:hidden;
@@ -439,7 +818,8 @@ nav a:hover{
 
     min-width:0;
 
-    background:var(--card);
+    background:
+        var(--card);
 
     border:
         1px solid
@@ -447,16 +827,24 @@ nav a:hover{
 
     border-radius:16px;
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:
+        blur(12px);
 
-    transition:.3s;
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    transition:
+        .3s;
 
     box-shadow:
         0 10px 35px
         rgba(0,0,0,.25);
+
 }
 
+
 .game-card:hover{
+
     transform:
         translateY(-6px);
 
@@ -464,24 +852,34 @@ nav a:hover{
         rgba(229,9,20,.55);
 
     box-shadow:
+
         0 18px 45px
         rgba(0,0,0,.4),
 
         0 0 25px
         rgba(229,9,20,.08);
+
 }
 
+
 .cover{
-    height:185px;
+
+    aspect-ratio:
+        16 / 10;
+
+    min-height:160px;
 
     background:#111;
 
     position:relative;
 
     overflow:hidden;
+
 }
 
+
 .cover img{
+
     width:100%;
 
     height:100%;
@@ -490,21 +888,31 @@ nav a:hover{
 
     display:block;
 
-    transition:.45s;
+    transition:
+        .45s;
+
 }
 
-.game-card:hover .cover img{
-    transform:scale(1.06);
+
+.game-card:hover
+.cover img{
+
+    transform:
+        scale(1.06);
+
 }
+
 
 .status{
+
     position:absolute;
 
     top:12px;
 
     right:12px;
 
-    padding:6px 9px;
+    padding:
+        6px 9px;
 
     border-radius:999px;
 
@@ -515,34 +923,49 @@ nav a:hover{
     background:
         rgba(0,0,0,.72);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:
+        blur(8px);
+
 }
 
+
 .status.complete{
-    color:var(--green);
+
+    color:
+        var(--green);
 
     border:
         1px solid
         rgba(37,229,106,.35);
+
 }
 
+
 .status.beta{
-    color:var(--yellow);
+
+    color:
+        var(--yellow);
 
     border:
         1px solid
         rgba(255,210,26,.35);
+
 }
 
+
 .status.incomplete{
+
     color:#ff5e66;
 
     border:
         1px solid
         rgba(255,94,102,.35);
+
 }
 
+
 .info{
+
     padding:17px;
 
     display:flex;
@@ -550,15 +973,24 @@ nav a:hover{
     flex-direction:column;
 
     flex:1;
+
 }
 
+
 .info h2{
+
     font-size:19px;
 
     margin-bottom:8px;
+
+    overflow-wrap:
+        anywhere;
+
 }
 
+
 .info p{
+
     color:#aaa;
 
     font-size:13px;
@@ -566,9 +998,12 @@ nav a:hover{
     line-height:1.75;
 
     margin-bottom:10px;
+
 }
 
+
 .meta{
+
     display:flex;
 
     justify-content:space-between;
@@ -582,18 +1017,33 @@ nav a:hover{
     margin-top:auto;
 
     padding-top:8px;
+
 }
 
+
 .downloads{
+
     display:flex;
 
     gap:8px;
 
     margin-top:14px;
+
 }
 
+
 .download{
-    flex:1;
+
+    flex:
+        1 1 0;
+
+    min-height:42px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     text-align:center;
 
@@ -601,9 +1051,11 @@ nav a:hover{
 
     color:#fff;
 
-    background:var(--red);
+    background:
+        var(--red);
 
-    padding:10px 8px;
+    padding:
+        10px 8px;
 
     border-radius:9px;
 
@@ -611,46 +1063,72 @@ nav a:hover{
 
     font-weight:bold;
 
-    transition:.2s;
+    transition:
+        .2s;
+
+    touch-action:
+        manipulation;
+
+    overflow-wrap:
+        anywhere;
+
 }
+
 
 .download.secondary{
+
     background:#242424;
+
 }
 
+
 .download:hover{
-    background:var(--red2);
+
+    background:
+        var(--red2);
 
     transform:
         translateY(-2px);
+
 }
+
 
 .download.secondary:hover{
+
     background:#333;
+
 }
 
+
 .disabled{
+
     opacity:.35;
 
     pointer-events:none;
+
 }
 
+
 .no-results{
+
     display:none;
 
     text-align:center;
 
     color:#777;
 
-    padding:70px 15px;
+    padding:
+        70px 15px;
+
 }
 
 
-/* =========================
+/* =========================================================
    BUBBLES
-========================= */
+========================================================= */
 
 .bubbles{
+
     position:fixed;
 
     inset:0;
@@ -660,9 +1138,12 @@ nav a:hover{
     z-index:-2;
 
     overflow:hidden;
+
 }
 
+
 .bubble{
+
     position:absolute;
 
     bottom:-100px;
@@ -680,25 +1161,31 @@ nav a:hover{
         rise
         linear
         infinite;
+
 }
+
 
 @keyframes rise{
 
     to{
+
         transform:
             translateY(-120vh)
             translateX(50px);
 
         opacity:0;
+
     }
+
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
+
     border-top:
         1px solid
         var(--border);
@@ -706,19 +1193,27 @@ footer{
     background:
         rgba(5,5,5,.72);
 
-    padding:35px 15px;
+    padding:
+        35px 15px;
 
     text-align:center;
 
     color:#777;
+
 }
+
 
 footer strong{
+
     color:#fff;
+
 }
 
+
 .footer-links{
-    margin:12px 0;
+
+    margin:
+        12px 0;
 
     display:flex;
 
@@ -727,29 +1222,44 @@ footer strong{
     gap:15px;
 
     flex-wrap:wrap;
+
 }
 
+
 .footer-links a{
+
     color:#aaa;
 
     text-decoration:none;
+
+    padding:5px;
+
 }
+
 
 .footer-links a:hover{
-    color:var(--red);
+
+    color:
+        var(--red);
+
 }
 
 
-/* =========================
-   TOP
-========================= */
+/* =========================================================
+   TOP BUTTON
+========================================================= */
 
 #top{
+
     position:fixed;
 
     left:18px;
 
-    bottom:18px;
+    bottom:
+        max(
+            18px,
+            env(safe-area-inset-bottom)
+        );
 
     width:45px;
 
@@ -769,112 +1279,487 @@ footer strong{
 
     display:none;
 
+    place-items:center;
+
     z-index:90;
 
     font-size:18px;
+
+    touch-action:
+        manipulation;
+
 }
+
 
 #top:hover{
-    background:var(--red);
+
+    background:
+        var(--red);
+
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media(max-width:760px){
+@media(max-width:900px){
 
     .nav{
-        padding:12px 0;
 
-        justify-content:center;
+        flex-wrap:wrap;
+
+        padding:
+            12px 0;
+
     }
 
     .logo{
-        width:100%;
 
-        text-align:center;
+        flex:
+            1 1 auto;
+
     }
 
     nav{
+
+        order:3;
+
+        width:100%;
+
         justify-content:center;
+
     }
 
     .social{
-        display:none;
+
+        margin-right:auto;
+
     }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:760px){
+
+    .container{
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .nav{
+
+        justify-content:center;
+
+        gap:10px;
+
+    }
+
+
+    .logo{
+
+        width:100%;
+
+        text-align:center;
+
+        font-size:18px;
+
+    }
+
+
+    nav{
+
+        gap:4px;
+
+    }
+
+
+    nav a{
+
+        font-size:13px;
+
+        padding:
+            8px 9px;
+
+    }
+
+
+    .social{
+
+        display:none;
+
+    }
+
 
     .hero{
-        padding-top:55px;
+
+        padding:
+            55px 10px
+            45px;
+
     }
+
+
+    .hero h1{
+
+        font-size:
+            clamp(
+                30px,
+                10vw,
+                48px
+            );
+
+    }
+
+
+    .hero p{
+
+        font-size:14px;
+
+        line-height:
+            1.8;
+
+    }
+
+
+    .hero-buttons{
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .btn{
+
+        width:100%;
+
+    }
+
+
+    .toolbar{
+
+        display:block;
+
+    }
+
+
+    .filters{
+
+        margin-top:10px;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+    }
+
+
+    .filter{
+
+        width:100%;
+
+    }
+
 
     .games{
+
         grid-template-columns:
-            repeat(2,minmax(0,1fr));
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
 
         gap:12px;
+
     }
+
 
     .cover{
-        height:145px;
+
+        aspect-ratio:
+            16 / 11;
+
+        min-height:
+            130px;
+
     }
+
 
     .info{
-        padding:13px;
+
+        padding:
+            12px;
+
     }
+
 
     .info h2{
-        font-size:16px;
+
+        font-size:
+            16px;
+
     }
 
+
     .info p{
-        font-size:12px;
+
+        font-size:
+            12px;
+
     }
+
+
+    .meta{
+
+        flex-direction:
+            column;
+
+        gap:3px;
+
+    }
+
+
+    .downloads{
+
+        flex-direction:
+            column;
+
+    }
+
+
+    .download{
+
+        width:100%;
+
+    }
+
 }
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
 @media(max-width:460px){
 
     .container{
+
         width:
-            min(
-                100% - 20px,
-                1180px
-            );
+            calc(100% - 20px);
+
     }
+
+
+    .logo{
+
+        font-size:
+            16px;
+
+    }
+
+
+    nav a{
+
+        font-size:
+            12px;
+
+        padding:
+            7px 8px;
+
+    }
+
 
     .games{
-        grid-template-columns:1fr;
+
+        grid-template-columns:
+            1fr;
+
     }
+
 
     .cover{
-        height:190px;
+
+        aspect-ratio:
+            16 / 9;
+
+        min-height:
+            190px;
+
     }
 
-    .toolbar{
-        display:block;
+
+    .info h2{
+
+        font-size:
+            18px;
+
     }
+
+
+    .info p{
+
+        font-size:
+            13px;
+
+    }
+
+
+    .downloads{
+
+        flex-direction:
+            row;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media(max-width:340px){
+
+    nav{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        width:100%;
+
+    }
+
+
+    nav a{
+
+        text-align:center;
+
+    }
+
 
     .filters{
-        margin-top:10px;
+
+        grid-template-columns:
+            1fr;
+
     }
 
-    .filter{
-        flex:1;
+
+    .downloads{
+
+        flex-direction:
+            column;
+
     }
+
 }
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media(hover:none){
+
+    .game-card:hover{
+
+        transform:none;
+
+    }
+
+
+    .game-card:hover
+    .cover img{
+
+        transform:none;
+
+    }
+
+
+    .btn:hover,
+    .download:hover{
+
+        transform:none;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
 
 @media(prefers-reduced-motion:reduce){
 
+    html{
+
+        scroll-behavior:
+            auto!important;
+
+    }
+
+
     *{
-        scroll-behavior:auto!important;
 
         animation:none!important;
 
         transition:none!important;
+
     }
+
 }
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    header,
+    .bubbles,
+    #top{
+
+        display:none!important;
+
+    }
+
+
+    body:before,
+    body:after{
+
+        display:none;
+
+    }
+
+
+    body{
+
+        background:#fff;
+
+        color:#000;
+
+    }
+
+}
+
 </style>
+
 </head>
 
 
@@ -894,7 +1779,8 @@ footer strong{
 
 <a
     class="logo"
-    href="#top-page">
+    href="#top-page"
+    aria-label="PIRO ONTAN GAME STORE">
 
     PIRO ONTAN
 
@@ -905,7 +1791,7 @@ footer strong{
 </a>
 
 
-<nav>
+<nav aria-label="القائمة الرئيسية">
 
 <a
     href="https://piroontan.github.io/GOST-OF-DEEP-MEDIA/">
@@ -936,8 +1822,9 @@ footer strong{
 <a
     href="https://www.youtube.com/@PIRO_ONTAN"
     target="_blank"
-    rel="noopener"
-    title="YouTube">
+    rel="noopener noreferrer"
+    title="YouTube"
+    aria-label="YouTube">
 
     ▶
 
@@ -947,8 +1834,9 @@ footer strong{
 <a
     href="https://www.facebook.com/groups/1048437976301513"
     target="_blank"
-    rel="noopener"
-    title="Facebook">
+    rel="noopener noreferrer"
+    title="Facebook"
+    aria-label="Facebook">
 
     f
 
@@ -1040,7 +1928,10 @@ footer strong{
     id="search"
     type="search"
     placeholder="🔎 ابحث عن لعبة..."
-    aria-label="البحث عن لعبة">
+    aria-label="البحث عن لعبة"
+    autocomplete="off"
+>
+
 
 </div>
 
@@ -1050,7 +1941,8 @@ footer strong{
 
 <button
     class="filter active"
-    data-filter="all">
+    data-filter="all"
+    type="button">
 
     الكل
 
@@ -1059,7 +1951,8 @@ footer strong{
 
 <button
     class="filter"
-    data-filter="complete">
+    data-filter="complete"
+    type="button">
 
     مكتملة
 
@@ -1068,7 +1961,8 @@ footer strong{
 
 <button
     class="filter"
-    data-filter="beta">
+    data-filter="beta"
+    type="button">
 
     شبه مكتملة
 
@@ -1077,7 +1971,8 @@ footer strong{
 
 <button
     class="filter"
-    data-filter="incomplete">
+    data-filter="incomplete"
+    type="button">
 
     غير مكتملة
 
@@ -1137,7 +2032,7 @@ footer strong{
 <a
     href="https://www.youtube.com/@PIRO_ONTAN"
     target="_blank"
-    rel="noopener">
+    rel="noopener noreferrer">
 
     YouTube
 
@@ -1147,7 +2042,7 @@ footer strong{
 <a
     href="https://www.facebook.com/groups/1048437976301513"
     target="_blank"
-    rel="noopener">
+    rel="noopener noreferrer">
 
     Facebook
 
@@ -1178,6 +2073,7 @@ footer strong{
 
 <button
     id="top"
+    type="button"
     aria-label="العودة للأعلى">
 
     ↑
@@ -1188,9 +2084,11 @@ footer strong{
 
 <script>
 
+/* =========================================================
+   GAMES DATA
+========================================================= */
 
 const games = [
-
 
 {
 
@@ -1215,7 +2113,6 @@ downloads:[
 ]
 
 },
-
 
 
 {
@@ -1248,7 +2145,6 @@ downloads:[
 },
 
 
-
 {
 
 name:"arona ace",
@@ -1272,7 +2168,6 @@ downloads:[
 ]
 
 },
-
 
 
 {
@@ -1300,7 +2195,6 @@ downloads:[
 },
 
 
-
 {
 
 name:"panap",
@@ -1317,7 +2211,6 @@ type:"incomplete",
 downloads:[]
 
 },
-
 
 
 {
@@ -1350,7 +2243,6 @@ downloads:[
 },
 
 
-
 {
 
 name:"stop +18",
@@ -1381,7 +2273,6 @@ downloads:[
 },
 
 
-
 {
 
 name:"car roder",
@@ -1400,15 +2291,13 @@ downloads:[
 [
 "💻 Windows",
 "https://www.dropbox.com/scl/fi/626ao16qui85i9qmjgd5i/car-roder-0.0.3.zip?rlkey=zk6e5nd58l4br8ddqxhr7cwav&st=6m7jtu3c&dl=0"
-], 
-
+],
 
 [
 "🤖 Android",
 "https://www.dropbox.com/scl/fi/hsy3eyvavihos4j6imhp0/car-roder-0.0.3.zip?rlkey=mde3222yic9p8p1w49fpdyet4&st=p0fnmtvy&dl=0"
 ]
 
-  
 ]
 
 }
@@ -1416,29 +2305,42 @@ downloads:[
 ];
 
 
+/* =========================================================
+   ELEMENTS
+========================================================= */
 
 const list =
 document.getElementById(
     "gamesList"
 );
 
-
 const search =
 document.getElementById(
     "search"
 );
-
 
 const noResults =
 document.getElementById(
     "noResults"
 );
 
+const bubbles =
+document.getElementById(
+    "bubbles"
+);
+
+const topBtn =
+document.getElementById(
+    "top"
+);
 
 let currentFilter =
 "all";
 
 
+/* =========================================================
+   SECURITY
+========================================================= */
 
 function safe(text){
 
@@ -1456,13 +2358,17 @@ function safe(text){
                 "'":"&#039;"
 
             }[m])
+
         );
+
 }
 
 
+/* =========================================================
+   RENDER GAMES
+========================================================= */
 
 function render(){
-
 
     const q =
         search.value
@@ -1470,10 +2376,8 @@ function render(){
         .toLowerCase();
 
 
-
     const filtered =
         games.filter(g=>{
-
 
             const matchFilter =
 
@@ -1483,7 +2387,6 @@ function render(){
 
                 g.type ===
                 currentFilter;
-
 
 
             const matchSearch =
@@ -1499,7 +2402,6 @@ function render(){
                 .includes(q);
 
 
-
             return (
 
                 matchFilter &&
@@ -1510,12 +2412,9 @@ function render(){
         });
 
 
-
     list.innerHTML =
 
-
         filtered.map(g=>{
-
 
             const buttons =
 
@@ -1525,70 +2424,63 @@ function render(){
 
                 g.downloads
 
-                .map((d,i)=>
+                .map((d,i)=>`
 
-
-                    `<a
-
+                    <a
                         class="download ${
-                            i>0
-                            ?"secondary"
-                            :""
+                            i > 0
+                            ? "secondary"
+                            : ""
                         }"
-
-                        href="${d[1]}"
-
+                        href="${safe(d[1])}"
                         target="_blank"
-
                         rel="noopener noreferrer">
 
                         ${safe(d[0])}
 
-                    </a>`
+                    </a>
 
-                )
+                `)
 
                 .join("")
 
-
                 :
 
+                `
 
-                `<span
-
+                <span
                     class="download disabled">
 
                     لا يوجد تحميل حالياً
 
-                </span>`;
+                </span>
 
+                `;
 
 
             return `
 
             <article
                 class="game-card"
-                data-type="${g.type}">
+                data-type="${safe(g.type)}">
 
 
                 <div class="cover">
 
 
                     <img
-
                         src="${safe(g.image)}"
-
                         alt="${safe(g.name)}"
-
                         loading="lazy"
-
+                        decoding="async"
                         onerror="
                             this.style.opacity='.25'
-                        ">
+                        "
+                    >
 
 
                     <span
-                        class="status ${g.type}">
+                        class="status ${safe(g.type)}">
 
                         ${safe(g.status)}
 
@@ -1667,17 +2559,18 @@ function render(){
 }
 
 
+/* =========================================================
+   FILTERS
+========================================================= */
 
 document
 .querySelectorAll(".filter")
 .forEach(btn=>{
 
-
     btn.addEventListener(
         "click",
 
         ()=>{
-
 
             document
             .querySelectorAll(
@@ -1710,6 +2603,7 @@ document
 });
 
 
+/* SEARCH */
 
 search.addEventListener(
     "input",
@@ -1717,13 +2611,9 @@ search.addEventListener(
 );
 
 
-
-const bubbles =
-document.getElementById(
-    "bubbles"
-);
-
-
+/* =========================================================
+   BUBBLES
+========================================================= */
 
 for(
     let i=0;
@@ -1771,13 +2661,9 @@ for(
 }
 
 
-
-const topBtn =
-document.getElementById(
-    "top"
-);
-
-
+/* =========================================================
+   TOP BUTTON
+========================================================= */
 
 window.addEventListener(
     "scroll",
@@ -1786,7 +2672,7 @@ window.addEventListener(
 
         topBtn.style.display =
 
-            scrollY > 450
+            window.scrollY > 450
 
             ?
 
@@ -1796,23 +2682,36 @@ window.addEventListener(
 
             "none";
 
+    },
+
+    {
+        passive:true
     }
 
 );
 
 
+topBtn.addEventListener(
+    "click",
 
-topBtn.onclick = ()=>
+    ()=>{
 
-    scrollTo({
+        window.scrollTo({
 
-        top:0,
+            top:0,
 
-        behavior:"smooth"
+            behavior:"smooth"
 
-    });
+        });
+
+    }
+
+);
 
 
+/* =========================================================
+   START
+========================================================= */
 
 render();
 
